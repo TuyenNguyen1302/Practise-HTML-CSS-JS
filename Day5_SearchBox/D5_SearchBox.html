@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Box</title>
+    <link rel="stylesheet" href="D5_SearchBox.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+    <div class="search-box">
+        <input type="text" class="search-input">
+        <button class="search-btn">
+            <i class="fa-solid fa-magnifying-glass-dollar"></i>
+        </button>
+    </div>
+</body>
+<script>
+    var btnSearch = document.querySelector('.search-btn');
+    //arrow func kh có hàm previousSibling
+    btnSearch.addEventListener('click', function(){
+        console.log(this.previousSibling); 
+        this.parentElement.classList.toggle('open'); 
+        this.previousElementSibling.focus(); 
+        // previousSibling --> node 
+        // previousElementSibling --> phần tử của node
+    })
+</script>
+</html>

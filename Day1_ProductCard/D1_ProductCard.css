@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --primary-color: #D36B13;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh; /* full chiều cao màn hình */
+    background: linear-gradient(to right, #c9b626, #c57b46);
+    font-family: "Poppins";
+}
+
+.card{
+    margin: 120px auto;
+    height: 400px;
+    width: 320px;
+    background: #fff7e6;
+    padding: 20px;
+    border-radius: 15px;
+    color: #70696C;
+    position: relative;
+}
+
+.card_heart, .card_cart{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.card_cart{
+    left: unset;
+    right: 20px;
+}
+
+.card:hover .card_heart{
+    left: 3px;
+}
+
+.card:hover .card_cart {
+    right: 3px;
+}
+
+.card_heart:hover{
+    font-size: 30px;
+    color: black;
+}
+
+.card_cart:hover{
+    font-size: 30px;
+    color: black;
+}
+
+.card_img{
+    width: 90%;
+    transition: 0.5s;
+}
+
+.card_img img{
+    height: 90%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card_img2{
+    width: 100%;
+    transition: 0.5s;
+}
+
+.card_img2 img{
+    height: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    display: none;
+}
+
+.card_img3{
+    width: 95%;
+    transition: 0.5s;
+}
+
+.card_img3 img{
+    height: 100%;
+    width: 100%;
+    margin-bottom: 12px;
+    object-fit: cover;
+    display: none;
+}
+
+.card:hover .card_img{
+    transform: translate(8px,-90px) rotate(5deg);
+}
+
+.card:hover .card_img2, .card:hover .card_img3{
+    transform: translate(0px,-80px);
+}
+
+.card:hover .card_img3{
+    transform: translate(-5px,-90px);
+}
+
+.card:hover .card_title{
+    transform: translate(-82px,-95px);
+}
+
+.card:hover .card_price{
+    transform: translate(-103px,-95px);
+}
+
+.card_title, .card_price{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.card_title{
+    color: var(--primary-color);
+}
+
+.card_size, .card_color{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card_size span{
+    padding: 1px 10px;
+    background: #70696C;
+    color: white;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.card_color span{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.card_color-yellow{
+    background: #e0cb2d;
+}
+
+.card_color-green{
+    background: blue;
+}
+
+.card_color-black{
+    background: black;
+}
+
+.card_action button{
+    background: var(--primary-color);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.card_size{
+    margin-top: 150px;
+}
+
+.card_size, .card_color, .card_action{
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+/* Hiển thị chi tiết card */
+.card:hover .card_size,
+.card:hover .card_color,
+.card:hover .card_action{
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0,-75px);
+    margin-top: 0px;
+}

@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(#355C7D, #C06C84, #6b5083);
+
+    /* Set .wrapper nằm ngang và căn giữa --> 3 */
+    display: flex;
+    justify-content: center; /* căn giữa theo chiều ngang */
+    align-items: center; /* căn giữa theo chiều dọc */
+}
+
+.wrapper{
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap; /* chia đôi số ảnh */
+    justify-content: space-between; /* giãn cách đều k/cách các ảnh vừa với width .wrapper */
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.image{
+    width: 22%;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden; /* khi có overflow thì ảnh đè lên div .image  */
+    margin: 20px 0;
+}
+
+.image:hover img{
+    transform: scale(3,2);
+}
+
+/* ---------CLICK VÀO 1 ẢNH BẤT KÌ -> PHÓNG TO ẢNH RA--------- */
+.gallery{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center; /* căn giữa theo chiều dọc */
+    color: white;
+
+    /* Animation hiển thị ảnh to lên */
+    opacity: 0; /* hiệu ứng mượt khi mở và đóng ảnh */ 
+    pointer-events: none; /* event click vô gallery vo nghia */
+    transform: scale(0.5);
+    transition: 0.5s;
+}
+
+.close{
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    font-size: 50px;
+}
+
+.control{
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.8);
+    position: absolute; /* set vị trí theo the cha chua no */
+}
+
+.left{
+    left: 15px;
+}
+
+.right{
+    right: 15px;
+}
+
+.gallery-inner{
+    width: 80%;
+    height: 90%;
+    margin: 0 auto; /* set 1 img hiển thị phóng to lên -> nằm giữa  */
+}
+
+.image, .close, .left, .right{
+    cursor: pointer;
+}
+/* Show ảnh to lên màn hình */
+.show{
+    opacity: 1;
+    pointer-events: auto; /* tự động nhận event 'click' vào ảnh để hiển thị lên */
+    transform: scale(1); /* phóng to ảnh lên 1 full màn hình*/
+}
+/* Tạo cho các nút left, right hiển thị? -> khi ảnh đang ở đầu/cuối */
+.hide{
+    display: none;
+}

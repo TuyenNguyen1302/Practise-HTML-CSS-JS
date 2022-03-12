@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: lightyellow;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+i{
+    cursor: pointer;
+}
+
+.container{
+    width: 80%;
+    height: 95%;
+}
+
+.main{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.main img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.control{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-image{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.list-image div{
+    flex: 1;
+}
+.list-image img{
+    padding: 3px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+
+.active{
+    background: rgb(216, 115, 115);
+}
+
+.img-feature{
+    transition: 2s;
+}
+
+@keyframes slideLeft {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
