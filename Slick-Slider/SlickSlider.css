@@ -8,6 +8,7 @@ body {
     height: 100vh;
     background: #e7e1e1;
 }
+
 .image {
     height: 500px;
     margin-bottom: 20px;
@@ -22,6 +23,7 @@ body {
 
 .image-title {
     font-size: 20px;
+    text-align: center;
 }
 
 /* ảnh cách nhau */
