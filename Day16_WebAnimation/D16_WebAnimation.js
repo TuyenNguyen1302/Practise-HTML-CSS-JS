@@ -4,6 +4,7 @@ function showOnScroll(element) {
     var hrects = element.getClientRects()[0];
     var height = window.innerHeight;
 
+    console.log(hrects);
     //kiểm tra element có nằm trong màn hình hiển thị client thấy hay kh?
     if (!(hrects.bottom < 0 || hrects.top > height)) {
         //nằm bên trong -> hiển thị 

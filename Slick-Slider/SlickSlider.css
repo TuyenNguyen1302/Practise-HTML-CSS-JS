@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #e7e1e1;
+}
+.image {
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.image-title {
+    font-size: 20px;
+}
+
+/* ảnh cách nhau */
+.slick-initialized .slick-slide {
+    margin: 0 20px;
+}
+
+.slick-arrow {
+    /* căn giữa theo chiều dọc, nằm trên cùng */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+.slick-arrow:hover{
+    background: white;
+    color: #000;
+}
+
+.slick-prev {
+    left:0;
+}
+
+.slick-next {
+    right:0;
+}
+
+.slick-dots{
+    /* căn giữa theo chiều ngang, nằm ở dưới */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50px);
+    display: flex !important; /* default của thư viện là display: inlineblock -> !important đè lên trên */
+    align-items: center;
+    justify-content: center;
+    grid-gap: 30px;
+    list-style: none;
+}
+
+.slick-dots button{
+    font-size: 0; /* number trong btn mất đi */
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    transition: all 0.2s linear;
+}
+
+.slick-dots .slick-active button{
+    background: #000;
+}
